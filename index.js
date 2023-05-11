@@ -46,7 +46,7 @@ const addConfig = ({ app_name, env_file, appdir }) => {
     const variables = require("dotenv").parse(env);
     const newVars = [];
     for (let key in variables) {
-      newVars.push(key + "=" + variables[key]);
+      newVars.push(key + "=\"" + variables[key] + "\"");
     }
     configVars = [...configVars, ...newVars];
   }
